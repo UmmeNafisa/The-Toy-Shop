@@ -9,6 +9,8 @@ import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login'
 import Register from './Pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import UserDashboard from './Pages/UserDashboard/UserDashboard/UserDashboard';
+import AdminDashboard from './Pages/AdminDashboard/AdminDashboard/AdminDashboard';
 
 function App() {
   return (
@@ -24,6 +26,12 @@ function App() {
             </Route>
             <Route path="/register">
               <Register />
+            </Route>
+            <Route path="/userDashboard">
+              <UserDashboard />
+            </Route>
+            <Route path="/adminDashboard">
+              <AdminDashboard />
             </Route>
             <Route exact path="/">
               <Home />
