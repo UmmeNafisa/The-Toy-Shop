@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Alert, Button, Spinner } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import { useHistory, useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const Login = () => {
@@ -54,6 +55,7 @@ const Login = () => {
                     {user?.email && <Alert variant='success'>Login successfully!</Alert>}
                     {authError && <Alert variant='danger'>{authError}</Alert>}
                 </form>
+                <p> New User ? Create a new Account <Link to="/register">Register</Link> </p>
                 <p>------------------------</p>
                 <Button onClick={handleGoogleSignIn} >Google Sign In</Button>
             </div>

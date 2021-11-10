@@ -72,10 +72,10 @@ const Register = () => {
                     {errors.phone && "Phone Number is required"}
                     <br />
 
-                    <Button type="submit" >Register</Button>
+                    <Button type="submit" >Register Now</Button>
 
                     {isLoading && <Spinner animation="grow" variant="primary" />}
-                    {user?.email && <Alert variant='success'>Login successfully!</Alert>}
+                    {user?.email && <Alert variant='success'>Welcome, Your registration is successfully done!</Alert>}
                     {authError && <Alert variant='danger'>{authError}</Alert>}
                 </form>
             </div>

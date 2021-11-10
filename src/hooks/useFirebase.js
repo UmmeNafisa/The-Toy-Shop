@@ -1,6 +1,6 @@
-import initializeFirebase from "../Pages/Login/Login/Firebase/firebase.init";
 import { useState, useEffect } from 'react';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, updateProfile, signOut } from "firebase/auth";
+import initializeFirebase from '../Pages/Login/Login/Firebase/firebase.init';
 
 
 // initialize firebase app
@@ -16,6 +16,7 @@ const useFirebase = () => {
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
+    //for registrations
     const registerUser = (email, password, name, history) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
@@ -26,15 +27,18 @@ const useFirebase = () => {
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
                     displayName: name
-                }).then(() => {
-                }).catch((error) => {
-                });
+                })
+                    .then(() => {
+                    })
+                    .catch((error) => {
+                    });
 
-                //save user to the databse
+                //save user to the database
 
-                // saveUser(email, name, 'POST')
+                saveUser(email, name, 'POST')
 
-                //home page a pathanor jonno registration er por 
+                //back to the home page after registration
+
                 history.replace('/');
             })
             .catch((error) => {
@@ -44,10 +48,12 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
+    //for manual login 
     const loginUser = (email, password, location, history) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
+                //back user to the destination 
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
                 setAuthError('');
@@ -58,17 +64,19 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
+    //google sign in 
     const signInWithGoogle = (location, history) => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
             .then((result) => {
-                // const user = result.user;
+                const user = result.user;
 
-                //usern info updateed to data base 
+                //user info updated to data base 
 
-                // saveUser(user.email, user.displayName, 'PUT')
-                // const destination = location?.state?.from || '/';
-                // history.replace(destination);
+                saveUser(user.email, user.displayName, 'PUT')
+
+                const destination = location?.state?.from || '/';
+                history.replace(destination);
                 setAuthError('');
             }).catch((error) => {
                 setAuthError(error.message);
@@ -109,19 +117,19 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
-    //user reg korte korle sei data db te save korbo 
+    //save the user info if he registered successfully
 
-    // const saveUser = (email, displayName, method) => {
-    //     const user = { email, displayName };
-    //     fetch('https://murmuring-ocean-39152.herokuapp.com/users', {
-    //         method: method,
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(user)
-    //     })
-    //         .then()
-    // }
+    const saveUser = (email, displayName, method) => {
+        const user = { email, displayName };
+        fetch('http://localhost:5000/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    }
 
     return {
         user,
