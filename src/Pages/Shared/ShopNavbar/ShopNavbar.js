@@ -3,6 +3,7 @@ import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import logo from '../../../Images/logo.png'
+import './ShopNavbar.css'
 
 const ShopNavbar = () => {
     const { user, logout } = useAuth();
