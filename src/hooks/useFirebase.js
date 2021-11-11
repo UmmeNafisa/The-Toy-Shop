@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, updateProfile, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, updateProfile, signOut, getIdToken } from "firebase/auth";
 import initializeFirebase from '../Pages/Login/Login/Firebase/firebase.init';
 
 
@@ -10,8 +10,8 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
-    // const [admin, setAdmin] = useState(false)
-    // const [token, setToken] = useState('');
+    const [admin, setAdmin] = useState(false)
+    const [token, setToken] = useState('');
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -88,8 +88,8 @@ const useFirebase = () => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
-                // getIdToken(user)
-                //     .then(idToken => setToken(idToken))
+                getIdToken(user)
+                    .then(idToken => setToken(idToken))
             } else {
                 setUser({})
             }
@@ -100,12 +100,12 @@ const useFirebase = () => {
 
     // check the email  admin or not  
 
-    // useEffect(() => {
-    //     fetch(`https://murmuring-ocean-39152.herokuapp.com/users/${user.email}`)
-    //         .then(res => res.json())
-    //         .then(data => setAdmin(data.admin))
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
 
-    // }, [user.email])
+    }, [user.email])
 
     const logout = () => {
         setIsLoading(true);
@@ -133,8 +133,8 @@ const useFirebase = () => {
 
     return {
         user,
-        // admin,
-        // token,
+        admin,
+        token,
         isLoading,
         authError,
         registerUser,
