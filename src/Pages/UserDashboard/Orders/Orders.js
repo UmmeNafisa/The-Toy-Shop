@@ -1,9 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import useAuth from '../../../hooks/useAuth';
+import { Container, Row } from 'react-bootstrap';
+import OrderCard from '../OrderCard/OrderCard';
 
 const Orders = () => {
+    const { user } = useAuth();
+    const [order, setOrder] = useState([])
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/myOrder?email=${user.email}`)
+            .then((res) => res.json())
+            .then((data) => setOrder(data));
+    }, [user.email]);
+
     return (
         <div>
-            <h3> Your Orders items is </h3>
+            <Container>
+                <h3> Your Orders items </h3>
+                <Row xs={2} md={3} lg={3} className="g-4">
+                    {
+                        order.map(item => <OrderCard
+                            key={item._id}
+                            item={item}
+                        ></OrderCard>)
+                    }
+
+                </Row>
+            </Container>
         </div>
     );
 };
