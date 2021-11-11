@@ -1,9 +1,10 @@
 import React from 'react';
-import { Card, CardGroup, Col } from 'react-bootstrap';
+import { Card, CardGroup, Col, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './HomeProductCard.css'
 
 const HomeProductCards = (props) => {
-    const { imgUrl, toyName, price } = props.toy;
+    const { imgUrl, toyName, price, _id } = props.toy;
     return (
         <div>
             <Col>
@@ -16,6 +17,7 @@ const HomeProductCards = (props) => {
                                 <h4> Price : ${price}</h4>
                             </Card.Text>
                         </Card.Body>
+                        <Link to={`/purchase/${_id}`}> <Button> Buy Now </Button> </Link>
                     </Card>
                 </CardGroup>
             </Col>

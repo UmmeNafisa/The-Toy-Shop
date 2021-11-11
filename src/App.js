@@ -11,6 +11,9 @@ import Register from './Pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import UserDashboard from './Pages/UserDashboard/UserDashboard/UserDashboard';
 import AdminDashboard from './Pages/AdminDashboard/AdminDashboard/AdminDashboard';
+// import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import Purchase from './Pages/Home/Purchase/Purchase';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
       <AuthProvider>
         <Router>
           <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
             <Route path="/home">
               <Home />
             </Route>
@@ -33,8 +39,11 @@ function App() {
             <Route path="/adminDashboard">
               <AdminDashboard />
             </Route>
-            <Route exact path="/">
-              <Home />
+            <Route path="/purchase/:toyId">
+              <Purchase></Purchase>
+            </Route>
+            <Route path="*">
+              <NotFound></NotFound>
             </Route>
           </Switch>
         </Router >

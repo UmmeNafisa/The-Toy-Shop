@@ -19,7 +19,7 @@ const HomeProduct = () => {
             <h1> total product {toys.length}</h1>
             <Row xs={2} md={3} lg={3} className="g-4">
                 {
-                    toys.map(toy => <HomeProductCards
+                    toys.slice(0, 6).map(toy => <HomeProductCards
                         key={toy._id}
                         toy={toy}
                     ></HomeProductCards>)
