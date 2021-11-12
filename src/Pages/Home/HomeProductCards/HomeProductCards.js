@@ -13,11 +13,14 @@ const HomeProductCards = (props) => {
                         <Card.Img variant="top" src={imgUrl} className="img-fluid toy-img" />
                         <Card.Body>
                             <Card.Title>{toyName}</Card.Title>
-                            <Card.Text>
-                                <h4> Price : ${price}</h4>
-                            </Card.Text>
+                            <div className="d-flex">
+                                <Card.Text>
+                                    <h4> Price : ${price}</h4>
+                                </Card.Text>
+
+                                <Link to={`/purchase/${_id}`}> <Button className="btn-all border-0 fw-bold"> Buy Now </Button> </Link>
+                            </div>
                         </Card.Body>
-                        <Link to={`/purchase/${_id}`}> <Button> Buy Now </Button> </Link>
                     </Card>
                 </CardGroup>
             </Col>

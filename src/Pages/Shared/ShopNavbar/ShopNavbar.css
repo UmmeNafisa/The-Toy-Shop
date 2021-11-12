@@ -3,11 +3,3 @@
     height: 40px;
     border-radius: 50%;
 }
-.btn-all{
-    background-color: #c29d59;
-    border: 0;    
-}
-
-.btn-all:hover{
-    background-color: rgba(0, 0, 0, 0.829);
-}

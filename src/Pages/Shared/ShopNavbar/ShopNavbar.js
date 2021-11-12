@@ -8,7 +8,7 @@ import './ShopNavbar.css'
 const ShopNavbar = () => {
     const { user, logout } = useAuth();
     return (
-        <Navbar collapseOnSelect expand="lg">
+        <Navbar collapseOnSelect expand="lg" sticky="top" variant="light" bg="white">
             <Container>
                 <img src={logo} style={{ width: 130, height: 80, marginTop: 0, }} alt="" />
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -22,7 +22,7 @@ const ShopNavbar = () => {
                         <Nav.Link as={Link} to="/adminDashboard" className="text-color fw-bold header-front"> ADMIN SIDE </Nav.Link>
 
                         {user?.email || user?.name ?
-                            <Button onClick={logout} varient="light" className="btn btn-all text-white fw-bold"> LOGOUT</Button> : <Nav.Link as={Link} to="/login"><Button varient="light" className="btn btn-all text-white fw-bold"> Login</Button> </Nav.Link>
+                            <Button onClick={logout} varient="light" className="btn btn-all text-white fw-bold py-0"> LOGOUT</Button> : <Nav.Link as={Link} to="/login"><Button varient="light" className="btn btn-all text-white fw-bold"> Login</Button> </Nav.Link>
                         }
                         {(user?.email || user?.name) && <div>
                             <Navbar.Text>

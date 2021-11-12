@@ -15,7 +15,9 @@ const HomeProduct = () => {
 
     return (
         <Container>
-            <h1> total product {toys.length}</h1>
+            <h2 className="text-color fw-bold"> Exclusive Toys </h2>
+            <hr className="w-25 mx-auto pb-0 mb-0" />
+            <p className="text-success"> Find Here our Exclusive Toy  </p>
             <Row xs={2} md={3} lg={3} className="g-4">
                 {
                     toys.slice(0, 6).map(toy => <HomeProductCards

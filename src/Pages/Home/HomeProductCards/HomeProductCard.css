@@ -1,0 +1,12 @@
+.toy-img{
+    width: auto;
+    max-width: 250px;
+    height: auto;
+    max-height: 240px;
+}
+.btn-all{
+    background-image: linear-gradient(#27e093f8,  #4a8aa5);
+}
+.text-color{
+    color: #26aae1;
+}
