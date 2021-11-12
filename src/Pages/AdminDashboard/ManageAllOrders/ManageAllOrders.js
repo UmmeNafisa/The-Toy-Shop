@@ -56,13 +56,15 @@ const ManageAllOrders = () => {
         <div className="container">
             <h1>All orders {orders.length}</h1>
 
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive>
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Product Name</th>
                         <th>buyer email</th>
                         <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Status selection</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
@@ -70,23 +72,27 @@ const ManageAllOrders = () => {
                 {orders?.map((item, index) => (
                     <tbody>
                         <tr>
-                            <td>{index}</td>
-                            <td>{item.productName}</td>
-                            <td>{item.email}</td>
-                            <td>{item.quantity}</td>
+                            <td>{index + 1}</td>
+                            <td>{item?.productName}</td>
+                            <td>{item?.email}</td>
+                            <td>{item?.quantity}</td>
+                            <td>{item?.price}</td>
                             <td>
                                 <form onSubmit={handleSubmit(onSubmit)}>
                                     <select
                                         onClick={() => handleOrderId(item?._id)}
                                         {...register("status")}
                                     >
-                                        <option value={item?.status}>{item?.status}</option>
-                                        <option value="approve">approve</option>
+
+                                        <option value="approve">Approved</option>
+                                        <option value="onTheProcess">On the process</option>
+                                        <option value="onTheWay">On the way</option>
                                         <option value="done">Done</option>
                                     </select>
                                     <input type="submit" />
                                 </form>
                             </td>
+                            <td>{item?.status}</td>
                             <td> <button onClick={() => { handleDeleteItems(item._id) }} className="btn bg-danger p-2">Delete</button></td>
                         </tr>
                     </tbody>
