@@ -1,0 +1,33 @@
+.footer-back-img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.809), rgba(128, 124, 124, 0.5)), url("https://image.freepik.com/free-photo/top-view-wooden-kids-toys-with-copy-space_23-2148251526.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.icons p{
+    padding: 0 10px;
+    font-size: 28px;
+    color: rgba(197, 218, 235, 0.967);
+    }
+.icons p:hover{
+        color:  #fc406f;
+        transform: scale(1.5);
+}
+
+.header-front{
+    font-family: 'Titillium Web', sans-serif;
+ }
+.stylish-front{
+       font-family: 'Cormorant Garamond', serif;
+}
+.text-align{    
+    text-align: start;
+}
+.toy-shop-color{
+    color: rgba(0, 255, 255, 0.864);
+    font-size: 40px;
+}
+.toy-shop-color:hover{
+    color: pink;
+    cursor: pointer;
+}
