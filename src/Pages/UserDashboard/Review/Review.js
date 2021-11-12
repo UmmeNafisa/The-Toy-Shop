@@ -31,6 +31,13 @@ const Review = () => {
                 <div className="mx-auto text-center ">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input {...register("displayName")} placeholder="Your Name" required /> <br />
+                        <input
+                            {...register("comment")}
+                            placeholder="Your Opinion"
+                            type="text"
+                            className="p-2 m-2 w-100"
+                        />
+                        <br />
                         <label htmlFor="Rating" className="border-end"> Rating:   </label>
                         <select {...register("rating")}>
                             <option value="1">1: Very bad</option>
@@ -39,6 +46,7 @@ const Review = () => {
                             <option value="4">4: Satisfy</option>
                             <option value="5">5: Excellent</option>
                         </select>
+                        <br />
                         <input type="submit" value="Submit" className="btn btn-all w-50 mb-3" />
                     </form>
                     {success && <Alert variant='success'>

@@ -27,7 +27,6 @@ const HomeProduct = () => {
                             toy={toy}
                         ></HomeProductCards>)
                     }
-
                 </Row>
             </Container>
         </div>

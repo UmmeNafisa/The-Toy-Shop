@@ -36,7 +36,6 @@ const AddAProduct = () => {
                             <input
                                 {...register("description")}
                                 placeholder="Description"
-                                className="p-2 m-2"
                                 className="p-2 m-2 w-100"
                             />
                             <br />
@@ -44,7 +43,6 @@ const AddAProduct = () => {
                                 {...register("price")}
                                 placeholder="Price"
                                 type="number"
-                                className="p-2 m-2"
                                 className="p-2 m-2 w-100"
                             />
                             <br />
@@ -53,7 +51,6 @@ const AddAProduct = () => {
                                 {...register("imgUrl", { required: true })}
                                 type="url"
                                 placeholder="Image Link"
-                                className="p-2 m-2"
                                 className="p-2 m-2 w-100"
                             />
                             <br />
