@@ -28,7 +28,7 @@ const ShopFooter = () => {
                             <h5 className="stylish-front"> 32A/4, Lake Road,Gulsan Tower </h5>
                         </div>
                     </Col>
-                    <Col className="text-align pt-5">
+                    <Col className="text-align pt-5 ps-5">
                         <h5 className=" header-front">We supports</h5>
                         <img src={cashPic} alt="" className="w-75 mt-3 mb-2" />
                         <hr className="text-white fw-bolder" />
