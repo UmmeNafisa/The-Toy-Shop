@@ -20,12 +20,14 @@ import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import AddAProduct from '../AddAProduct/AddAProduct';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageProducts from '../ManageProducts/ManageProducts';
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 
 
 
 const AdminDashboard = () => {
-    const { user, logout } = useAuth();
+    const { user, logout, admin } = useAuth();
     let { path, url } = useRouteMatch();
+    console.log(admin);
     return (
         <div style={{ display: 'flex', height: '100vh', overflow: 'scroll initial' }}>
             <div>
@@ -48,13 +50,17 @@ const AdminDashboard = () => {
                             <NavLink as={Link} to={`${url}/allOrders`} activeClassName="activeClicked">
                                 <CDBSidebarMenuItem icon="columns">All Orders</CDBSidebarMenuItem>
                             </NavLink>
-                            <NavLink as={Link} to={`${url}/addProduct`} activeClassName="activeClicked">
-                                <CDBSidebarMenuItem icon="table">Add Products</CDBSidebarMenuItem>
-                            </NavLink>
-                            <NavLink as={Link} to={`${url}/makeAdmin`} activeClassName="activeClicked">
-                                <CDBSidebarMenuItem icon="user">Make an Admin</CDBSidebarMenuItem>
+                            {
+                                admin ? <Link to={`${url}/makeAdmin`} activeClassName="activeClicked">
+                                    <CDBSidebarMenuItem icon="user">Make an Admin</CDBSidebarMenuItem>
+                                </Link> : <></>
+                            }
 
-                            </NavLink>
+                            {
+                                admin ? <Link as={Link} to={`${url}/addProduct`} activeClassName="activeClicked">
+                                    <CDBSidebarMenuItem icon="table">Add Products</CDBSidebarMenuItem>
+                                </Link> : <></>
+                            }
                             <NavLink as={Link} to={`${url}/manageProducts`} activeClassName="activeClicked">
                                 <CDBSidebarMenuItem icon="user">Manage Products</CDBSidebarMenuItem>
                             </NavLink>
@@ -81,12 +87,12 @@ const AdminDashboard = () => {
                     <Route path={`${path}/allOrders`}>
                         <ManageAllOrders />
                     </Route>
-                    <Route path={`${path}/addProduct`}>
+                    <AdminRoute path={`${path}/addProduct`}>
                         <AddAProduct />
-                    </Route>
-                    <Route path={`${path}/makeAdmin`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin />
-                    </Route>
+                    </AdminRoute>
                     <Route path={`${path}/manageProducts`}>
                         <ManageProducts />
                     </Route>

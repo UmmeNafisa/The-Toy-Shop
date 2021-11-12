@@ -42,7 +42,7 @@ const Purchase = () => {
         fetch(`http://localhost:5000/singleProduct/${toyId}`)
             .then((res) => res.json())
             .then((data) => setItem(data));
-    }, []);
+    }, [toyId]);
     console.log(item);
     return (
         <>

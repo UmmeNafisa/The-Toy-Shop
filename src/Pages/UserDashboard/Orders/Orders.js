@@ -16,7 +16,7 @@ const Orders = () => {
         })
             .then((res) => res.json())
             .then((data) => setOrder(data));
-    }, [user.email]);
+    }, [user.email, token]);
 
     return (
         <div>
