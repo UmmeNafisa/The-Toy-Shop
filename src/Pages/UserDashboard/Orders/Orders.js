@@ -4,11 +4,16 @@ import { Container, Row } from 'react-bootstrap';
 import OrderCard from '../OrderCard/OrderCard';
 
 const Orders = () => {
-    const { user } = useAuth();
+    const { user, token } = useAuth();
     const [order, setOrder] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrder?email=${user.email}`)
+        const url = `http://localhost:5000/myOrder?email=${user.email}`
+        fetch(url, {
+            headers: {
+                'authorization': `Bearer ${token}`
+            }
+        })
             .then((res) => res.json())
             .then((data) => setOrder(data));
     }, [user.email]);

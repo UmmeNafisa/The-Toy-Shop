@@ -46,7 +46,7 @@ const MakeAdmin = () => {
                 </FloatingLabel>
                 <Button type="submit" variant="success">Make Admin</Button>
             </form>
-            {success && <Alert variant='success'>Made Admin successfully!</Alert>}
+            {success ? <Alert variant='success'>Made Admin successfully!</Alert> : ""}
         </div>
     );
 };
