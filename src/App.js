@@ -11,7 +11,7 @@ import Register from './Pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import UserDashboard from './Pages/UserDashboard/UserDashboard/UserDashboard';
 import AdminDashboard from './Pages/AdminDashboard/AdminDashboard/AdminDashboard';
-// import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Purchase from './Pages/Home/Purchase/Purchase';
 import NotFound from './Pages/NotFound/NotFound';
 import AllProducts from './Pages/AllProducts/AllProducts/AllProducts';
@@ -34,18 +34,18 @@ function App() {
             <Route path="/register">
               <Register />
             </Route>
-            <Route path="/userDashboard">
+            <PrivateRoute path="/userDashboard">
               <UserDashboard />
-            </Route>
-            <Route path="/adminDashboard">
+            </PrivateRoute>
+            <PrivateRoute path="/adminDashboard">
               <AdminDashboard />
-            </Route>
+            </PrivateRoute>
             <Route path="/allProducts">
               <AllProducts />
             </Route>
-            <Route path="/purchase/:toyId">
+            <PrivateRoute path="/purchase/:toyId">
               <Purchase></Purchase>
-            </Route>
+            </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>

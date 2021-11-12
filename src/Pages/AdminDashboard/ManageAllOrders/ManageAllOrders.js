@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 const ManageAllOrders = () => {
     const [orders, setOrders] = useState([]);
     const { register, handleSubmit } = useForm();
+    const [success, setSuccess] = useState(false);
 
     const [status, setStatus] = useState("");
     const [orderId, setOrderId] = useState("");
@@ -19,7 +20,6 @@ const ManageAllOrders = () => {
     // const status = "apporved";
     const handleOrderId = (id) => {
         setOrderId(id);
-        console.log(id);
     };
 
     const onSubmit = (data) => {
@@ -30,20 +30,26 @@ const ManageAllOrders = () => {
             body: JSON.stringify(data),
         })
             .then((res) => res.json())
-            .then((result) => setStatus(result));
+            .then((result) => {
+                if (result.matchedCount > 1) {
+                    setSuccess(true)
+                    alert('Status updated successfully')
+                    setStatus(result)
+                }
+
+            });
     };
 
     //delete items 
     const handleDeleteItems = id => {
         const proceed = window.confirm("Are sure  to delete it ?")
-        console.log(id);
         if (proceed) {
             fetch(`http://localhost:5000/allOrders/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    console.log(data)
+                    // console.log(data)
                     if (data.deletedCount > 0) {
                         alert('Deleted successfully')
                         const remainingItems = orders.filter(item => item._id !== id)
