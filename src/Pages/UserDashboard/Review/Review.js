@@ -8,11 +8,13 @@ const Review = () => {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input {...register("firstName")} />
-                <select {...register("gender")}>
-                    <option value="female">female</option>
-                    <option value="male">male</option>
-                    <option value="other">other</option>
+                <input {...register("displayName")} placeholder="Your Name" />
+                <select {...register("rating")}>
+                    <option value="1">female</option>
+                    <option value="2">male</option>
+                    <option value="3">other</option>
+                    <option value="4">other</option>
+                    <option value="5">other</option>
                 </select>
                 <input type="submit" />
             </form>

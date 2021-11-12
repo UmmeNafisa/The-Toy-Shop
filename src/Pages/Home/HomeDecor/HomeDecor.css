@@ -1,0 +1,48 @@
+.home-decor-bg{
+    background-image: url("../../../Images/background/home-12.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80vh;
+}
+
+.decor-box{
+    background-color: rgba(255, 255, 255, 0.83);
+    margin-top: -150px;
+    width: 35%;
+
+}
+.decor-header{
+    color: #26aae1;
+    font-size: 40px;
+}
+.discover-btn{
+    color: rgb(247, 134, 93);
+    border: 2px dotted rgb(247, 134, 93);
+    padding: 5px 30px;
+    background-color: white;
+    font-weight: 700;
+    font-size: 17px;
+}
+.discover-btn:hover{
+    color: white;
+    background-color:rgb(247, 134, 93);
+     border: 2px dotted white;
+}
+
+/* media query  */
+@media only screen and (max-width: 600px) {
+    .home-decor-bg{
+        width: 375px;
+        background-size: cover;
+        background-position: center;
+        height: 50vh;
+    }
+    .decor-box{
+        background-color: rgba(255, 255, 255, 0.803);
+        margin-top: -150px;
+        width: 70%;
+
+    
+    }
+    
+}

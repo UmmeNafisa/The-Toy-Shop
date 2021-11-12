@@ -17,7 +17,9 @@ const AllProducts = () => {
         <>
             <ShopNavbar></ShopNavbar>
             <Container>
-                <h1> total product {toys.length}</h1>
+                <h1 className="section-header fw-bold stylish-front pt-5"> Exclusive Toys </h1>
+                <hr className="w-25 mx-auto pb-0 mb-1" />
+                <p className="text-success"> Find Here our Exclusive Toys  </p>
                 <Row xs={2} md={3} lg={3} className="g-4">
                     {
                         toys.slice(0, 6).map(toy => <HomeProductCards
