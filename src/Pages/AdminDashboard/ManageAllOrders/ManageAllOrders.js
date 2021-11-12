@@ -34,7 +34,6 @@ const ManageAllOrders = () => {
     };
 
     //delete items 
-
     const handleDeleteItems = id => {
         const proceed = window.confirm("Are sure  to delete it ?")
         console.log(id);
@@ -52,7 +51,6 @@ const ManageAllOrders = () => {
                     }
                 });
         }
-
     }
     return (
         <div className="container">

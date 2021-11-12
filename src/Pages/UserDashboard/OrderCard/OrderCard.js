@@ -2,7 +2,25 @@ import React from 'react';
 import { Card, CardGroup, Col, Button } from 'react-bootstrap';
 
 const OrderCard = (props) => {
-    const { imgUrl, productName, status, address, delivery, quantity } = props.item;
+    const { imgUrl, productName, status, address, delivery, quantity, _id } = props.item;
+
+    //delete items 
+    const handleDeleteItems = id => {
+        const proceed = window.confirm("Are sure  to cancel it ?")
+        console.log(id);
+        if (proceed) {
+            fetch(`http://localhost:5000/allOrders/${id}`, {
+                method: "DELETE",
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log(data)
+                    if (data.deletedCount > 0) {
+                        alert('Deleted successfully')
+                    }
+                });
+        }
+    }
     return (
         <div>
             <Col>
@@ -17,7 +35,7 @@ const OrderCard = (props) => {
                                 <p> Shift to {address} at {delivery} delivery system</p>
                             </Card.Text>
                         </Card.Body>
-                        <Button> Cancel </Button>
+                        <Button onClick={() => { handleDeleteItems(_id) }}> Cancel </Button>
                     </Card>
                 </CardGroup>
             </Col>

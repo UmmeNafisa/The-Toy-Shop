@@ -18,8 +18,9 @@ const Purchase = () => {
     //add / post orders on DB
     const onSubmit = (data) => {
         data.email = user?.email;
-        data.imgUrl = item.imgUrl;
-        data.productName = item.toyName;
+        data.imgUrl = item?.imgUrl;
+        data.productName = item?.toyName;
+        data.price = item?.price;
         data.status = "pending";
         fetch("http://localhost:5000/addOrders", {
             method: "POST",

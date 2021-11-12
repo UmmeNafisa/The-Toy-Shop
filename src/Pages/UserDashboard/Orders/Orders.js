@@ -24,7 +24,6 @@ const Orders = () => {
                             item={item}
                         ></OrderCard>)
                     }
-
                 </Row>
             </Container>
         </div>
