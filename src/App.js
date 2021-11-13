@@ -9,12 +9,11 @@ import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login'
 import Register from './Pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
-import UserDashboard from './Pages/UserDashboard/UserDashboard/UserDashboard';
-import AdminDashboard from './Pages/AdminDashboard/AdminDashboard/AdminDashboard';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Purchase from './Pages/Home/Purchase/Purchase';
 import NotFound from './Pages/NotFound/NotFound';
 import AllProducts from './Pages/AllProducts/AllProducts/AllProducts';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -34,11 +33,8 @@ function App() {
             <Route path="/register">
               <Register />
             </Route>
-            <PrivateRoute path="/userDashboard">
-              <UserDashboard />
-            </PrivateRoute>
-            <PrivateRoute path="/adminDashboard">
-              <AdminDashboard />
+            <PrivateRoute path="/dashboard">
+              <Dashboard />
             </PrivateRoute>
             <Route path="/allProducts">
               <AllProducts />
