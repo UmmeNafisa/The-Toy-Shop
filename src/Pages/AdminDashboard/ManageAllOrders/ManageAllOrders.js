@@ -89,10 +89,10 @@ const ManageAllOrders = () => {
                                         {...register("status")}
                                     >
 
-                                        <option value="approve">Approved</option>
-                                        <option value="onTheProcess">On the process</option>
-                                        <option value="onTheWay">On the way</option>
-                                        <option value="done">Shipped</option>
+                                        <option value="Approve">Approved</option>
+                                        <option value="OnTheProcess">On the process</option>
+                                        <option value="OnTheWay">On the way</option>
+                                        <option value="Shipped">Shipped</option>
                                     </select>
                                     <input type="submit" />
                                 </form>
