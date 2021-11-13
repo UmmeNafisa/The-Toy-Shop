@@ -1,19 +1,20 @@
 import React from 'react';
 import { Card, CardGroup, Col, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const OrderCard = (props) => {
-    const { imgUrl, productName, status, address, delivery, quantity, _id } = props.item;
+const ManageProductCard = (props) => {
+    const { imgUrl, toyName, price, _id } = props.toy;
 
     //delete item 
     const handleDeleteItems = id => {
-        const proceed = window.confirm("Are sure  to cancel it ?")
+        const proceed = window.confirm("Are sure  to delete it ?")
         if (proceed) {
             fetch(`http://localhost:5000/allOrders/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    console.log(data)
+                    // console.log(data)
                     if (data.deletedCount > 0) {
                         alert('Deleted successfully')
                     }
@@ -25,16 +26,16 @@ const OrderCard = (props) => {
             <Col>
                 <CardGroup>
                     <Card className="border-0">
-                        <Card.Img variant="top" src={imgUrl} className="img-fluid toy-img" />
+                        <Card.Img variant="top" src={imgUrl} style={{ width: 200, height: 150 }} />
                         <Card.Body>
-                            <Card.Title>{productName}</Card.Title>
+                            <Card.Title className="stylish-front fw-bolder text-success"><h5>{toyName}</h5></Card.Title>
+
                             <Card.Text>
-                                <h6> Quantity : {quantity} pcs</h6>
-                                <h6>  {status} </h6>
-                                <p> Shift to {address} at {delivery} delivery system</p>
+                                <h4 className="stylish-front text-info fw-bold"> ${price}</h4>
                             </Card.Text>
+                            <Link to={`/purchase/${_id}`}> <Button onClick={() => { handleDeleteItems(_id) }} className="btn-all border-0 fw-bold rounded-pill"> Delete </Button> </Link>
+
                         </Card.Body>
-                        <Button onClick={() => { handleDeleteItems(_id) }}> Cancel </Button>
                     </Card>
                 </CardGroup>
             </Col>
@@ -42,4 +43,4 @@ const OrderCard = (props) => {
     );
 };
 
-export default OrderCard;
+export default ManageProductCard;

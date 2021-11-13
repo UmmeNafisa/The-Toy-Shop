@@ -22,7 +22,7 @@ const AllProducts = () => {
                 <p className="text-success"> Find Here our Exclusive Toys  </p>
                 <Row xs={1} md={2} lg={3} className="g-4">
                     {
-                        toys.slice(0, 6).map(toy => <HomeProductCards
+                        toys.map(toy => <HomeProductCards
                             key={toy._id}
                             toy={toy}
                         ></HomeProductCards>)
