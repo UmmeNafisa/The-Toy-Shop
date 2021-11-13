@@ -63,7 +63,7 @@ const Login = () => {
                             {authError && <Alert variant='danger'>{authError}</Alert>}
                         </form>
                         <p> New User ? Create a new Account <Link to="/register">Register</Link> </p>
-                        <p>------------------------</p>
+                        <p>------------ or ------------</p>
                         <Button className="btn-all border-0 mb-5" onClick={handleGoogleSignIn} >Google Sign In</Button>
                     </div>
                 </div>

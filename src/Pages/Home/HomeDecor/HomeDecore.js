@@ -4,7 +4,7 @@ import './HomeDecor.css'
 const HomeDecore = () => {
     return (
         <>
-            <div className="home-decor-bg mt-3">
+            <div className="home-decor-bg mt-3" id="decorToys">
             </div>
             <div className="decor-box mx-auto pb-5">
                 <h1 className="decor-header fw-bold stylish-front pt-5"> Kids Room Decor Toys </h1>

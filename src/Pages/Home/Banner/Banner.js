@@ -7,7 +7,7 @@ import './Banner.css'
 
 const Banner = () => {
     return (
-        <Carousel fade>
+        <Carousel fade id="home">
             <Carousel.Item>
                 <img
                     className="d-block w-100"
