@@ -11,7 +11,7 @@ const Review = () => {
     // user?.photoURL
     const onSubmit = data => {
         data.photoURL = user?.photoURL;
-        fetch("http://localhost:5000/addReview", {
+        fetch("https://fierce-hollows-12616.herokuapp.com/addReview", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

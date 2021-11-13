@@ -22,7 +22,7 @@ const Purchase = () => {
         data.productName = item?.toyName;
         data.price = item?.price;
         data.status = "pending";
-        fetch("http://localhost:5000/addOrders", {
+        fetch("https://fierce-hollows-12616.herokuapp.com/addOrders", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
@@ -39,7 +39,7 @@ const Purchase = () => {
 
     //get single product info
     useEffect(() => {
-        fetch(`http://localhost:5000/singleProduct/${toyId}`)
+        fetch(`https://fierce-hollows-12616.herokuapp.com/singleProduct/${toyId}`)
             .then((res) => res.json())
             .then((data) => setItem(data));
     }, [toyId]);

@@ -12,7 +12,7 @@ const ManageAllOrders = () => {
 
     console.log(status);
     useEffect(() => {
-        fetch("http://localhost:5000/allOrders")
+        fetch("https://fierce-hollows-12616.herokuapp.com/allOrders")
             .then((res) => res.json())
             .then((data) => setOrders(data));
     }, []);
@@ -24,7 +24,7 @@ const ManageAllOrders = () => {
 
     const onSubmit = (data) => {
         console.log(data, orderId);
-        fetch(`http://localhost:5000/statusUpdate/${orderId}`, {
+        fetch(`https://fierce-hollows-12616.herokuapp.com/statusUpdate/${orderId}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
@@ -44,7 +44,7 @@ const ManageAllOrders = () => {
     const handleDeleteItems = id => {
         const proceed = window.confirm("Are sure  to delete it ?")
         if (proceed) {
-            fetch(`http://localhost:5000/allOrders/${id}`, {
+            fetch(`https://fierce-hollows-12616.herokuapp.com/allOrders/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())

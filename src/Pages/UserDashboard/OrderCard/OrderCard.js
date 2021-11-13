@@ -8,7 +8,7 @@ const OrderCard = (props) => {
     const handleDeleteItems = id => {
         const proceed = window.confirm("Are sure  to cancel it ?")
         if (proceed) {
-            fetch(`http://localhost:5000/allOrders/${id}`, {
+            fetch(`https://fierce-hollows-12616.herokuapp.com/allOrders/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())
