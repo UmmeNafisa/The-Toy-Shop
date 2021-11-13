@@ -8,6 +8,10 @@ import './ShopNavbar.css'
 
 const ShopNavbar = () => {
     const { user, logout } = useAuth();
+    const activeStyle = {
+        fontWeight: "bold",
+        color: "blue"
+    }
     return (
         <Navbar collapseOnSelect expand="lg" sticky="top" variant="light" bg="white">
             <Container>
@@ -15,14 +19,14 @@ const ShopNavbar = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav" >
                     <Nav className="ms-auto">
-                        <Nav.Link as={HashLink} to="/home#home" className="text-color fw-bold header-front" >HOME</Nav.Link>
-                        <Nav.Link as={Link} to="/allProducts" className="text-color fw-bold header-front" >EXCLUSIVE TOYS</Nav.Link>
-                        <Nav.Link as={HashLink} to="/home#decorToys" className="text-color fw-bold header-front" >DECOR TOYS</Nav.Link>
-                        <Nav.Link as={HashLink} to="/home#testimonials" className="text-color fw-bold header-front" >TESTIMONIALS</Nav.Link>
-                        <Nav.Link as={Link} to="/userDashboard" className="text-color fw-bold header-front" >Dashboard</Nav.Link>
+                        <Nav.Link as={HashLink} to="/home#home" activeStyle={activeStyle} className="text-color fw-bold header-front" >HOME</Nav.Link>
+                        <Nav.Link as={Link} to="/allProducts" activeStyle={activeStyle} className="text-color fw-bold header-front" >EXCLUSIVE TOYS</Nav.Link>
+                        <Nav.Link as={HashLink} to="/home#decorToys" activeStyle={activeStyle} className="text-color fw-bold header-front" >DECOR TOYS</Nav.Link>
+                        <Nav.Link as={HashLink} to="/home#testimonials" activeStyle={activeStyle} className="text-color fw-bold header-front" >TESTIMONIALS</Nav.Link>
+                        {
+                            user?.email && <Nav.Link as={Link} to="/dashboard" activeStyle={activeStyle} className="text-color fw-bold header-front" >DASHBOARD</Nav.Link>
 
-                        <Nav.Link as={Link} to="/adminDashboard" className="text-color fw-bold header-front"> ADMIN SIDE </Nav.Link>
-
+                        }
                         {user?.email || user?.name ?
                             <h5 onClick={logout} className=" text-success fw-bold py-2 logout"> Logout</h5> : <Nav.Link as={Link} to="/login"><h5 className="text-success fw-bold"> Login</h5> </Nav.Link>
                         }

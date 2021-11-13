@@ -9,8 +9,8 @@ const HomeProductCards = (props) => {
         <div>
             <Col>
                 <CardGroup>
-                    <Card className="border-0">
-                        <Card.Img variant="top" src={imgUrl} className="img-fluid toy-img" />
+                    <Card className="border-0 h-100">
+                        <Card.Img variant="top" src={imgUrl} className=" img-fluid toy-img" />
                         <Card.Body>
                             <Card.Title className="stylish-front fw-bolder text-success"><h3>{toyName}</h3></Card.Title>
                             <p className="text-muted"> {description.slice(0, 70)}...</p>

@@ -2,9 +2,9 @@ import React from 'react';
 import footerImg from '../../../Images/logo.png'
 import { Col, Container, Row } from 'react-bootstrap';
 import cashPic from '../../../Images/payment-companies-logo.png'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faFacebook, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
-// import { faVoicemail } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import { faVoicemail } from '@fortawesome/free-solid-svg-icons';
 import './shopFooter.css'
 
 const ShopFooter = () => {
@@ -33,13 +33,13 @@ const ShopFooter = () => {
                         <img src={cashPic} alt="" className="w-75 mt-3 mb-2" />
                         <hr className="text-white fw-bolder" />
                         <h5 className="mt-2 header-front text-align">Follow us </h5>
-                        {/* <div className=" d-flex justify-content-start icons  ">
+                        <div className=" d-flex justify-content-start icons  ">
                             <p><FontAwesomeIcon icon={faFacebook} /></p>
                             <p><FontAwesomeIcon icon={faYoutube} /></p>
                             <p><FontAwesomeIcon icon={faTwitter} /></p>
                             <p><FontAwesomeIcon icon={faInstagram} /></p>
                             <p><FontAwesomeIcon icon={faVoicemail} /></p>
-                        </div> */}
+                        </div>
                         <div>
                             <h2 className="stylish-front toy-shop-color"> The Toy Shop</h2>
                         </div>

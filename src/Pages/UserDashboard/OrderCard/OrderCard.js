@@ -24,17 +24,17 @@ const OrderCard = (props) => {
         <div>
             <Col>
                 <CardGroup>
-                    <Card className="border-0">
+                    <Card className="border-0 h-100">
                         <Card.Img variant="top" src={imgUrl} className="img-fluid toy-img" />
                         <Card.Body>
                             <Card.Title>{productName}</Card.Title>
                             <Card.Text>
                                 <h6> Quantity : {quantity} pcs</h6>
-                                <h6>  {status} </h6>
+                                <h6> Order tracking: {status} </h6>
                                 <p> Shift to {address} at {delivery} delivery system</p>
                             </Card.Text>
                         </Card.Body>
-                        <Button onClick={() => { handleDeleteItems(_id) }}> Cancel </Button>
+                        <Button className="mb-5" onClick={() => { handleDeleteItems(_id) }}> Cancel </Button>
                     </Card>
                 </CardGroup>
             </Col>

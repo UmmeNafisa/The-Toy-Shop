@@ -1,0 +1,7 @@
+.payment-bg{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.809), rgba(128, 124, 124, 0.5)), url("https://image.freepik.com/free-vector/online-banking_24908-60038.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
