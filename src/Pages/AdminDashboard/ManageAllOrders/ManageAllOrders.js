@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 const ManageAllOrders = () => {
     const [orders, setOrders] = useState([]);
     const { register, handleSubmit } = useForm();
-    const [success, setSuccess] = useState(false);
+    // const [success, setSuccess] = useState(false);
 
     const [status, setStatus] = useState("");
     const [orderId, setOrderId] = useState("");
@@ -32,7 +32,6 @@ const ManageAllOrders = () => {
             .then((res) => res.json())
             .then((result) => {
                 if (result.matchedCount > 1) {
-                    setSuccess(true)
                     alert('Status updated successfully')
                     setStatus(result)
                 }

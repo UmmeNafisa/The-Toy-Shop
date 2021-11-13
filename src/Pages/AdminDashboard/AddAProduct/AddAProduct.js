@@ -22,7 +22,7 @@ const AddAProduct = () => {
 
     return (
         <div>
-            <h1 className="mt-5 text-center">Add a Product</h1>
+            <h1 className="section-header fw-bold stylish-front">Add a Product</h1>
             <div className="w-75 mx-auto bg-secondary">
                 <div className="event-box border border d-flex justify-content-center align-items-center">
                     <div className="mx-auto text-center">
@@ -30,7 +30,7 @@ const AddAProduct = () => {
                             <input
                                 {...register("toyName")}
                                 placeholder="Toy Name"
-                                className="p-2 m-2 w-100"
+                                className="p-2 m-2 mt-5 w-100"
                             />
                             <br />
                             <input
@@ -59,7 +59,7 @@ const AddAProduct = () => {
 
                             {errors.exampleRequired && <span>This field is required</span>}
 
-                            <input type="submit" value="Add" className="btn btn-info w-50 mb-3" />
+                            <input type="submit" value="Add" className="btn text-white btn-all w-50 mb-5" />
                         </form>
                     </div>
                 </div>
