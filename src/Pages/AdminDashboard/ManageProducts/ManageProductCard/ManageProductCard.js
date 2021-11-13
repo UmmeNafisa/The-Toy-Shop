@@ -9,12 +9,11 @@ const ManageProductCard = (props) => {
     const handleDeleteItems = id => {
         const proceed = window.confirm("Are sure  to delete it ?")
         if (proceed) {
-            fetch(`https://fierce-hollows-12616.herokuapp.com/allOrders/${id}`, {
+            fetch(`https://fierce-hollows-12616.herokuapp.com/allProducts/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    // console.log(data)
                     if (data.deletedCount > 0) {
                         alert('Deleted successfully')
                     }
@@ -33,7 +32,7 @@ const ManageProductCard = (props) => {
                             <Card.Text>
                                 <h4 className="stylish-front text-info fw-bold"> ${price}</h4>
                             </Card.Text>
-                            <Link to={`/purchase/${_id}`}> <Button onClick={() => { handleDeleteItems(_id) }} className="btn-all border-0 fw-bold rounded-pill"> Delete </Button> </Link>
+                            <Button onClick={() => { handleDeleteItems(_id) }} className="btn-all border-0 fw-bold rounded-pill"> Delete </Button>
 
                         </Card.Body>
                     </Card>
