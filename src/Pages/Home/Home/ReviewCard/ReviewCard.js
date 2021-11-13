@@ -6,7 +6,7 @@ import './ReviewCadr.css'
 
 const ReviewCard = (props) => {
     const { photoURL, displayName, rating, comment } = props.review;
-    console.log(photoURL);
+    console.log(rating);
 
     return (
         <div>
@@ -15,7 +15,7 @@ const ReviewCard = (props) => {
                     (photoURL === null) ? <img src={user} className="reviewer-img" alt="" /> : <img src={photoURL} className="reviewer-img rounded-circle" alt="" />
                 }
 
-                <h5 className="stylish-front fw-bolder text-primary ">{displayName}</h5>
+                <h5 className="stylish-front fw-bolder reviewer-name">{displayName}</h5>
                 <p className="text-muted fw-bold">{comment}</p>
                 <Rating className="rating"
                     initialRating={rating}

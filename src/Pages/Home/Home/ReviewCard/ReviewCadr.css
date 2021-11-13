@@ -1,15 +1,18 @@
-.review-bg{
-    background-image:linear-gradient(rgba(119, 116, 116, 0.796), rgba(173, 170, 170, 0.33)), url('../../../../Images/background/home-14.png');
+.review-bg-home{
+    background-image: url('../../../../Images/background/star-bg.png');
     background-repeat: no-repeat;
-
-    background-position: center;
-    height: 100%; 
+    background-position:bottom;
+    height: 80vh;
+}
+.reviewer-name{
+    color:  #26aae1;
+   
 }
 .rating{
     color: rgb(250, 197, 63);
 }
 .reviewer-img{
-    width: 200px;
-    height: 200px;
+    width: 120px;
+    height: 100px;
     
 }

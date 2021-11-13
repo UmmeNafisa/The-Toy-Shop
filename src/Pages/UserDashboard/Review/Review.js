@@ -25,33 +25,35 @@ const Review = () => {
             });
     };
     return (
-        <div>
-            <h2 className="decor-header fw-bold stylish-front pt-5" > Leave A Review </h2>
-            <div className=" d-flex justify-content-center align-items-center">
-                <div className="mx-auto text-center ">
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <input {...register("displayName")} placeholder="Your Name" required /> <br />
-                        <input
-                            {...register("comment")}
-                            placeholder="Your Opinion"
-                            type="text"
-                            className="p-2 m-2 w-100"
-                        />
-                        <br />
-                        <label htmlFor="Rating" className="border-end"> Rating:   </label>
-                        <select {...register("rating")}>
-                            <option value="1">1: Very bad</option>
-                            <option value="2">2: Bad</option>
-                            <option value="3">3: Good</option>
-                            <option value="4">4: Satisfy</option>
-                            <option value="5">5: Excellent</option>
-                        </select>
-                        <br />
-                        <input type="submit" value="Submit" className="btn btn-all w-50 mb-3" />
-                    </form>
-                    {success && <Alert variant='success'>
-                        Your review submitted successfully. Thanks for your review.
-                    </Alert>}
+        <div className="review-bg">
+            <div className=" w-75 pt-5">
+                <h2 className="decor-header fw-bold stylish-front text-white pt-5" > Leave A Review </h2>
+                <div className=" d-flex justify-content-center align-items-center">
+                    <div >
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <input {...register("displayName")} placeholder="Your Name" required className="w-100 py-2" /> <br />
+                            <input
+                                {...register("comment")}
+                                placeholder="Your Opinion"
+                                type="text"
+                                className="w-100 my-2 py-2"
+                            />
+                            <br />
+                            <label htmlFor="Rating" className="bg-white text-dark px-5 py-2"> Rating:   </label>
+                            <select {...register("rating")} className="px-3 py-2 border-0" >
+                                <option value="1">1: Very bad</option>
+                                <option value="2">2: Bad</option>
+                                <option value="3">3: Good</option>
+                                <option value="4">4: Satisfy</option>
+                                <option value="5">5: Excellent</option>
+                            </select>
+                            <br />
+                            <input type="submit" value="Submit" className="btn btn-all w-50 mb-3 mt-2 text-white" />
+                        </form>
+                        {success && <Alert variant='success'>
+                            Your review submitted successfully. Thanks for your review.
+                        </Alert>}
+                    </div>
                 </div>
             </div>
         </div>
