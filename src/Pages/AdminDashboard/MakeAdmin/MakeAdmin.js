@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Alert, Button, FloatingLabel, Form } from 'react-bootstrap'
 import useAuth from '../../../hooks/useAuth';
+import './MakeAdmin.css'
 
 
 
@@ -25,7 +26,7 @@ const MakeAdmin = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount) {
-                    console.log(data);
+                    // console.log(data);
                     setSuccess(true);
                 }
             })
@@ -33,18 +34,18 @@ const MakeAdmin = () => {
         e.preventDefault()
     }
     return (
-        <div>
-            <h3 className="text-center mt-5 mb-3 ms-5">Make an Admin</h3>
-            <form onSubmit={handleAdminSubmit} className="d-flex w-100">
+        <div className="admin-bg">
+            <h2 className="section-header fw-bold stylish-front pt-5">Make an Admin</h2>
+            <form onSubmit={handleAdminSubmit} className=" w-50 mx-auto text-center">
                 <FloatingLabel
                     controlId="floatingInput"
                     label="Email address"
                     className="mb-3"
                 >
                     <Form.Control type="email"
-                        onBlur={handleOnBlur} placeholder="name@example.com" />
+                        onBlur={handleOnBlur} required placeholder="name@example.com" />
                 </FloatingLabel>
-                <Button type="submit" variant="success">Make Admin</Button>
+                <Button type="submit" className="btn-all border-0 mb-5">Make Admin</Button>
             </form>
             {success ? <Alert variant='success'>Made Admin successfully!</Alert> : ""}
         </div>
