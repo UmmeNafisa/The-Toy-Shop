@@ -21,7 +21,7 @@ const Orders = () => {
     return (
         <div>
             <Container>
-                <h2 className="section-header fw-bold stylish-front "> Your Ordered {order.length} items </h2>
+                <h2 className="section-header fw-bold stylish-front mb-5 "> You Ordered {order.length} items </h2>
                 <Row xs={2} md={3} lg={3} className="g-4">
                     {
                         order.map(item => <OrderCard

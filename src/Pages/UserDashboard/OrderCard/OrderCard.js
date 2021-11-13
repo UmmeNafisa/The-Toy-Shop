@@ -34,7 +34,7 @@ const OrderCard = (props) => {
                                 <p> Shift to {address} at {delivery} delivery system</p>
                             </Card.Text>
                         </Card.Body>
-                        <Button className="mb-5" onClick={() => { handleDeleteItems(_id) }}> Cancel </Button>
+                        <Button className="mb-5 btn-all border-0 fw-bold" onClick={() => { handleDeleteItems(_id) }}> Cancel </Button>
                     </Card>
                 </CardGroup>
             </Col>

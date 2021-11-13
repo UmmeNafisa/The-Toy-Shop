@@ -6,6 +6,9 @@
 .btn-all{
     background-image: linear-gradient(#27e093f8,  #4a8aa5);
 }
+.btn-all:hover{
+    background-image: linear-gradient(#f070b6f8,  #729bf1);
+}
 .section-header{
     color: #26aae1;
     font-size: 50px;

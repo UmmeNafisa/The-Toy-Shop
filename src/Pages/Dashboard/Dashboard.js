@@ -37,8 +37,8 @@ const Dashboard = () => {
     return (
         <>
             <ShopNavbar></ShopNavbar>
-            <Button className="btn-all border-0 dashboard" onClick={handleShow}>
-                <p><FontAwesomeIcon icon={faBars} /></p>
+            <Button className="btn-all border-0 dashboard pb-0" onClick={handleShow}>
+                <p><FontAwesomeIcon icon={faBars} /> Panel</p>
             </Button>
 
             <Offcanvas show={show} onHide={handleClose} className="bg-dark">

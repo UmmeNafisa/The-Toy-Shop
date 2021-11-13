@@ -92,7 +92,7 @@ const ManageAllOrders = () => {
                                         <option value="approve">Approved</option>
                                         <option value="onTheProcess">On the process</option>
                                         <option value="onTheWay">On the way</option>
-                                        <option value="done">Done</option>
+                                        <option value="done">Shipped</option>
                                     </select>
                                     <input type="submit" />
                                 </form>
