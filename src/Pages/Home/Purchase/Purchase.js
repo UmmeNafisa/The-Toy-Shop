@@ -48,36 +48,29 @@ const Purchase = () => {
         <>
             <ShopNavbar></ShopNavbar>
             <div>
-                <div className="details-container">
+                <div className="container">
                     <div className="row container">
-                        <div className="col-md-6 my-5">
-                            <h2> Your Selected Toy </h2>
+                        <div className="col-md-6 my-3">
+                            <h2 className="section-header fw-bold stylish-front "> Your Selected Toy </h2>
                             <img className="w-50" src={item.imgUrl} alt="" />
-                            <h1>{item?.toyName}</h1>
-                            <p>{item?.description}</p>
-                            <h3> Price : ${item?.price}</h3>
+                            <h3 className="text-success fw-bold">{item?.toyName}</h3>
+                            <p className="text-muted fw-bold">{item?.description}</p>
+                            <h4 className='text-info fw-bold'> Price : ${item?.price}</h4>
                             <h5> Delivery System : </h5>
-                            <ul>Regular Delivery:
-                                <li>
-                                    Inside Dhaka: Delivery the product within 2-3 days
-                                </li>
-                                <li>
-                                    Outside Dhaka: Delivery the product within 4-5 days
-                                </li>
-                            </ul>
-                            <ul>Express Delivery:
-                                <li>
-                                    Inside Dhaka: Delivery the product within 24 hr
-                                </li>
-                                <li>
-                                    Outside Dhaka: Delivery the product within 1-2 days
-                                </li>
-                            </ul>
+                            <li><span className="text-success fw-bold">Regular Delivery:</span>
+                                Inside city, delivery the product within 2-3 days.Outside city, delivery the product within 4-5 days
+
+                            </li>
+                            <li><span className="text-success fw-bold">Express Delivery:</span>
+
+                                Inside city, delivery the product within 24 hr.                                    Outside city, delivery the product within 1-2 days
+                            </li>
+                            <h6> We have 7 days return policy </h6>
 
                         </div>
 
                         <div className="col-md-6">
-                            <h2> To Confirm the order : </h2>
+                            <h2 className="section-header fw-bold stylish-front"> Confirm Order  </h2>
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <input
                                     {...register("displayName")}
@@ -129,7 +122,7 @@ const Purchase = () => {
                                 <input
                                     type="submit"
                                     value="Order now"
-                                    className="btn btn-info w-50"
+                                    className="btn btn-all text-white fw-bold w-50 mb-5"
                                 />
                             </form>
                         </div>

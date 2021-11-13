@@ -1,5 +1,5 @@
 .review-bg{
-    background-image:linear-gradient(rgba(119, 116, 116, 0.796), rgba(173, 170, 170, 0.33)), url('../../../../Images/background/home-14.png');
+    background-image:linear-gradient(rgba(119, 116, 116, 0.796), rgba(173, 170, 170, 0.33)), url('../../../Images/background/home-14.png');
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh; 

@@ -1,12 +1,13 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './NotFound.css'
 
 const NotFound = () => {
     return (
-        <div>
-            <h1> 404 Error .. Page not found</h1>
-            <h3> Are you lost ????  </h3>
-            <Link to="/home"> Back to Home </Link>
+        <div className="not-found-bg">
+            <h1 className="section-header fw-bold stylish-front pt-5"> Are you lost ...???</h1>
+            <Link to="/home"> <Button className="btn-all"> Back to Home </Button> </Link>
         </div>
     );
 };

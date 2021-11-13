@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Alert } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../hooks/useAuth';
+import './Review.css'
 
 
 const Review = () => {
