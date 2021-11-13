@@ -6,7 +6,7 @@ import './ReviewCadr.css'
 
 const ReviewCard = (props) => {
     const { photoURL, displayName, rating, comment } = props.review;
-    console.log(rating);
+
 
     return (
         <div>

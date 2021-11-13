@@ -12,7 +12,7 @@ const HomeProduct = () => {
             .then(data => setToys(data))
     }, [])
 
-    console.log(toys);
+
 
     return (
         <div >

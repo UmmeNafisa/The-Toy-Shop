@@ -34,7 +34,6 @@ const Purchase = () => {
                     reset()
                 }
             });
-        console.log(data);
     };
 
     //get single product info
@@ -43,7 +42,7 @@ const Purchase = () => {
             .then((res) => res.json())
             .then((data) => setItem(data));
     }, [toyId]);
-    console.log(item);
+
     return (
         <>
             <ShopNavbar></ShopNavbar>

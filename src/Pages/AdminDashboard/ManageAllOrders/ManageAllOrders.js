@@ -7,17 +7,16 @@ const ManageAllOrders = () => {
     const { register, handleSubmit } = useForm();
     // const [success, setSuccess] = useState(false);
 
-    const [status, setStatus] = useState("");
     const [orderId, setOrderId] = useState("");
 
-    console.log(status);
+
     useEffect(() => {
         fetch("https://fierce-hollows-12616.herokuapp.com/allOrders")
             .then((res) => res.json())
             .then((data) => setOrders(data));
     }, []);
 
-    // const status = "apporved";
+
     const handleOrderId = (id) => {
         setOrderId(id);
     };
@@ -33,7 +32,7 @@ const ManageAllOrders = () => {
             .then((result) => {
                 if (result.matchedCount > 1) {
                     alert('Status updated successfully')
-                    setStatus(result)
+
                 }
 
             });
@@ -48,7 +47,7 @@ const ManageAllOrders = () => {
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    // console.log(data)
+
                     if (data.deletedCount > 0) {
                         alert('Deleted successfully')
                         const remainingItems = orders.filter(item => item._id !== id)

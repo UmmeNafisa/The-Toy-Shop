@@ -7,7 +7,7 @@ import ShopNavbar from '../../Shared/ShopNavbar/ShopNavbar';
 import useAuth from '../../../hooks/useAuth';
 
 const Register = () => {
-    const { register, formState: { errors }, reset } = useForm();
+    const { register, formState: { errors }, } = useForm();
     const [loginData, setLoginData] = useState({});
     const history = useHistory()
     const { user, registerUser, isLoading, authError } = useAuth();

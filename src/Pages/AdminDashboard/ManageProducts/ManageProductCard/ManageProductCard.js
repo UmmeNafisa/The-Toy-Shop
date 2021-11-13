@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, CardGroup, Col, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 
 const ManageProductCard = (props) => {
     const { imgUrl, toyName, price, _id } = props.toy;
@@ -25,7 +24,7 @@ const ManageProductCard = (props) => {
             <Col>
                 <CardGroup>
                     <Card className="border-0">
-                        <Card.Img variant="top" src={imgUrl} style={{ width: 200, height: 150 }} />
+                        <Card.Img variant="top" src={imgUrl} className="mx-auto" style={{ width: 200, height: 150 }} />
                         <Card.Body>
                             <Card.Title className="stylish-front fw-bolder text-success"><h5>{toyName}</h5></Card.Title>
 
